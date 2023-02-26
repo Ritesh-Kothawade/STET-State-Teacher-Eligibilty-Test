@@ -1,0 +1,25 @@
+{% extends 'user/user_dashboard.html' %}
+{% block content %}
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<style>
+    .btn{
+        background-color:orange;
+        }
+        .btn:hover{
+        background-color:lightblue;
+        border           : 0.0625em solid rgb(115,153,77);
+        border-radius    : 0.125em;
+        background       : rgb(153,204,102);
+        }
+</style>
+<center><a href="{{url_for('exam_test', user_id=current_user.id)}}"><button class="btn">Start Test</button></a></center>
+{% endblock %}

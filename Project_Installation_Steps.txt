@@ -1,0 +1,18 @@
+Project Installation Steps-
+
+Prerequisites-
+
+- Install pycharm IDE Community version - https://www.jetbrains.com/pycharm/download/#section=windows
+
+Installation Steps-
+
+1. Open the "Maharashtra State Teachers Eligibility Test" folder in pycharm.
+
+2. In Terminal enter command- flask run
+
+3. The project will be served on -  http://127.0.0.1:5000/ 
+
+Project Installation Video- https://drive.google.com/file/d/1SAtQEHbqp200SqNgOcTycpIqq0h8oa4A/view?usp=sharing
+
+
+Note- Admin Credentials are available in Admin_Credentials.txt file

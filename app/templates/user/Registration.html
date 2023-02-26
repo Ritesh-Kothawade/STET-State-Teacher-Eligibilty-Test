@@ -1,0 +1,154 @@
+{% extends "base.html" %}
+{% block content %}
+<head>
+  <meta charset="UTF-8">
+  <title>{% block title %}Registration{% endblock %}</title>
+<link rel='stylesheet' href='static/signup/bootstrap.min.css'>
+<link rel='stylesheet' href='static/signup/bootstrap-theme.min.css'>
+<link rel='stylesheet' href='static/signup/bootstrapValidator.min.css'><link rel="stylesheet" href="static/signup/style.css">
+    <style>
+        #btn{
+        background-color:orange;
+        }
+        #btn:hover{
+        background-color:lightblue;
+        border           : 0.0625em solid rgb(115,153,77);
+        border-radius    : 0.125em;
+        background       : rgb(153,204,102);
+        }
+        #radiobtn{
+        list-style: none;
+        list-style-type: none;
+        display: block;
+        }
+        #fullnameib{
+        size:50;
+        }
+    </style>
+</head>
+<div class="container" align="center" style="background-color: gainsboro;">
+    <br><br><br>
+<form action="" method="POST" style="width: 60%" class="mx-auto" id="contact_form">
+    <fieldset>
+    {{form.hidden_tag()}}
+    <legend><center><h2><b>Registration Form</b></h2></center></legend><br>
+    <div class="form_group">
+        <label class="col-md-4 control-label">Full Name</label>
+  <div class="col-md-4 inputGroupContainer">
+  <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        {% if form.fullname.errors %}
+        {{form.fullname(class='form-control is-invalid')}}
+        <div class="invalid-feedback">
+            {% for error in form.fullname.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+      <span id="fullnameib">{{form.fullname(class='form-control')}}</span>
+        {% endif %}
+    </div>
+  </div>
+    </div>
+<br><br><br>
+    <div class="form_group">
+        <label class="col-md-4 control-label">E-Mail</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+        {% if form.email.errors %}
+        {{form.email(class='form-control is-invalid')}}
+        <div class="invalid-feedback">
+            {% for error in form.email.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.email(class='form-control')}}
+        {% endif %}
+    </div>
+    </div>
+    </div>
+<br><br><br>
+    <div class="form_group">
+         <label class="col-md-4 control-label" >Password</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+        {% if form.password.errors %}
+        {{form.password(class='form-control is-invalid')}}
+        <div class="invalid-feedback">
+            {% for error in form.password.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.password(class='form-control')}}
+        {% endif %}
+    </div>
+    </div>
+    </div>
+
+<br><br><br>
+    <div class="form_group">
+        <label class="col-md-4 control-label" >Confirm Password</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+  <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+
+        {% if form.confirm_password.errors %}
+        {{form.confirm_password(class='form-control is-invalid')}}
+        <div class="invalid-feedback">
+            {% for error in form.confirm_password.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.confirm_password(class='form-control')}}
+        {% endif %}
+    </div><br>
+    </div>
+    </div>
+<br><br><br>
+    <div class="form_group">
+        <label class="col-md-4 control-label">Contact No.</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group">
+        <span class="input-group-addon"><i class="glyphicon glyphicon-earphone"></i></span>
+        {% if form.contact_no.errors %}
+        {{form.contact_no(class='form-control is-invalid')}}
+        <div class="invalid-feedback">
+            {% for error in form.contact_no.errors %}
+            <span>{{error}}</span>
+            {% endfor %}
+        </div>
+        {% else %}
+        {{form.contact_no(class='form-control')}}
+        {% endif %}
+    </div>
+    </div>
+    </div>
+        <br><br><br>
+        <div class="form_group" >
+            <label class="col-md-4 control-label">Gender</label>
+    <div class="col-md-4 inputGroupContainer">
+    <div class="input-group" >
+        <span id="radiobtn">{{ form.gender }}</span>
+        </div>
+    </div>
+        </div>
+        <br><br><br>
+        <br><br><br>
+    <div class="form_group" >
+        {{form.submit(class='btn btn-outline-info', id='btn')}}
+    </div>
+    </fieldset>
+</form>
+    <br><br><br>
+<br><br><br>
+</div>
+
+<br><br><br>
+<br><br><br>
+<br><br><br>
+{% endblock %}

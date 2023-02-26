@@ -1,0 +1,89 @@
+{% extends 'user/user_dashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<style>
+  .timera{
+  background-color: lightblue;
+  width: 300px;
+  border: 8px solid blue;
+}
+.btn{
+        background-color:orange;
+        }
+        .btn:hover{
+        background-color:lightblue;
+        border           : 0.0625em solid rgb(115,153,77);
+        border-radius    : 0.125em;
+        background       : rgb(153,204,102);
+        }
+</style>
+    <script>
+        function myfunction(){ alert("You have submitted your answer!");}
+    </script>
+</head>
+<body>
+<h1>Exam Test is Started</h1>
+<div class="timera">
+<b><div id="countdown" style="font-size: large;"></div>
+<div id="notifier" style="font-size: large;"></div></b></div><br><br>
+    <script type="text/javascript">
+
+(function () {
+  function display( notifier, str ) {
+    document.getElementById(notifier).innerHTML = str;
+  }
+
+  function toMinuteAndSecond( x ) {
+    return "   " + Math.floor(x/60) + "  Minutes Remaining" ;
+
+  }
+
+
+
+  function setTimer( remain, actions ) {
+
+    var action;
+
+    (function countdown() {
+
+       display("countdown", toMinuteAndSecond(remain));
+
+       if (action = actions[remain]) {
+
+         action();
+
+       }
+
+       if (remain > 0) {
+         remain -= 1;
+         setTimeout(arguments.callee, 1000);
+       }
+    })(); // End countdown
+  }
+
+  setTimer(1800 , {
+    10: function () { display("notifier", "Just 10 seconds to go"); },
+     5: function () { display("notifier", "5 seconds left");        },
+     0: function () { location.href="{{url_for('account')}}";       }
+  });
+})();
+
+</script>
+
+<form action='/an' method='POST'>
+    <ol>
+        {% for i in q %}
+            <li> {{i}}</li><br>
+            {% for j in o[i] %}
+                <input type='radio' value='{{j}}' name='{{i}}' />&nbsp;&nbsp;{{j}}
+            <br>{% endfor %}
+        <br>{% endfor %}
+    </ol>
+    <input type="submit" value="submit" class="btn" onclick="myfunction()" />
+</form>
+</body>
+</html>
+{% endblock %}

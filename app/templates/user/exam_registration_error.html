@@ -1,0 +1,4 @@
+{% extends 'user/user_dashboard.html' %}
+{% block content %}
+<h3><a href="{{url_for('Update_exam_registration', e_r_f_id=current_user.id)}}">Click Here To Update The Exam Registration Form</a></h3>
+{% endblock %}

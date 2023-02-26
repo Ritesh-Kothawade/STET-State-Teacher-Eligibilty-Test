@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>Registration Form</title>
+
+<style>
+    
+h2{
+  font-family: Arial; 
+  font-size: 24px;         
+  font-style: normal; 
+  font-weight: bold; 
+  color: b;
+  text-align: center; 
+  text-decoration: underline
+}
+
+table{
+  font-family: Arial; 
+  color:white; 
+  font-size: 16px; 
+  font-style: normal;
+  font-weight: Regular;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);  
+  border-collapse: collapse; 
+  border: 2px solid #00FF00;
+  
+
+}
+table.inner{
+  border: 2px
+}
+
+input[type=text], input[type=email], input[type=number]{
+  width: 50%;
+  padding: 6px 12px;
+  margin: 5px 0;
+  box-sizing: border-box;
+}
+
+input[type=submit], input[type=reset]{
+  width: 15%;
+  padding: 8px 12px;
+  margin: 5px 0;
+  border: none;
+  box-sizing: border-box;
+  text-align: center;
+  background: linear-gradient(to bottom, #33ccff 0%, #ff99cc 100%);
+}
+
+</style>
+
+</head>
+<body>
+<h2>Exam Registration Form </h3>
+
+<table align="center" cellpadding = "10">
+<!--------------------- First Name ------------------------------------------>
+<tr>
+<td>First Name</td>
+<td><input type="text" name="FirstName" maxlength="50" />
+</td>
+</tr>
+<!--------------------- Middle Name ------------------------------------------>
+<tr>
+<td>First Name</td>
+<td><input type="text" name="MiddleName" maxlength="50" />
+
+</td>
+</tr>
+<!------------------------ Last Name --------------------------------------->
+<tr>
+<td>Last Name</td>
+<td><input type="text" name="LastName" maxlength="50" />
+
+</td>
+</tr>
+<!-------------------------- Email ID ------------------------------------->
+<tr>
+<td>Email ID</td>
+<td><input type="email" name="EmailID" maxlength="100" /></td>
+</tr>
+<!-------------------------- Mobile Number ------------------------------------->
+<tr>
+<td>Mobile Number</td>
+<td>
+<input type="text" name="MobileNumber" maxlength="10" />
+
+</td>
+</tr>
+<!---------------------- Gender ------------------------------------->
+<tr>
+<td>Gender</td>
+<td>
+<input type="radio" name="Gender" value="Male" />
+Male
+<input type="radio" name="Gender" value="Female" />
+Female
+</td>
+</tr>
+
+<!--------------------------Date Of Birth----------------------------------->
+
+<tr>
+<td>Date of Birth(DOB)</td>
+<td>
+<input type="date"/>
+</td>
+</tr>
+<!------------------------- Address ---------------------------------->
+<tr>
+<td>Address<br /><br /><br /></td>
+<td><textarea name="Address" rows="10" cols="50"></textarea></td>
+</tr>
+<!-------------------------- City ------------------------------------->
+<tr>
+<td>City</td>
+<td><input type="text" name="City" maxlength="50" />
+</td>
+</tr>
+<!----- -------------------- Pin Code-------------------------------------->
+<tr>
+<td>Pin Code</td>
+<td><input type="Number" name="PinCode" maxlength="6" />
+</td>
+</tr>
+<!---------------------------- State ----------------------------------->
+<tr>
+<td>State</td>
+<td><input type="text" name="State" maxlength="50" />
+</td>
+</tr>
+<!------------------------------ Country --------------------------------->
+<tr>
+<td>Country</td>
+<td><input type="text" name="Country" /></td>
+</tr>
+
+<!-----------------------Qualification---------------------------------------->
+
+<tr>
+<td>Qualification <br /><br /><br /></td>
+<td>
+<br/>
+<input type="checkbox" name="HighSchool" value="High School" />
+High School(10th)<br>
+<input type="checkbox" name="HigherSchool" value="Higher School" />
+Higher School(12th)<br/>
+<input type="checkbox" name="Graduation" value="Graduation" />
+Graduation(Bachelors)<br/>
+<input type="checkbox" name="PostGraduation" value="Post Graduation" />
+Post Graduation(Masters)<br/>
+<input type="checkbox" name="Phd" value="Phd">
+Phd
+</td>
+</tr>
+
+<!---------------------------- Courses ----------------------------------->
+<tr>
+<td>Courses<br />Applied For</td>
+<td>
+<input type="radio" name="Course" value="name">
+<br>
+<input type="radio" name="Course" value="name">
+<br>
+<input type="radio" name="Course" value="name">
+<br>
+<input type="radio" name="Course" value="name">
+<br>
+<input type="radio" name="Course" value="name">
+<br>
+<input type="radio" name="Course" value="name">
+<br>
+<input type="radio" name="Course" value="name">
+<br>
+<input type="radio" name="Course" value="name">
+<br>
+</td>
+</tr>
+<!----------------------- Upload Documents ------------------------------->
+<tr>
+<th>Upload your Documents</th>
+<td><input type="file"/></td>
+</tr>
+<!----------------------- Submit and Reset ------------------------------->
+<tr>
+<td colspan="2" align="center">
+<input type="submit" value="Submit">
+<input type="reset" value="Reset">
+</td>
+</tr>
+</table>
+</form>
+</body>
+</html>

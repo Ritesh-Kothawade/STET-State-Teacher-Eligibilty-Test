@@ -1,0 +1,323 @@
+{% extends 'user/user_dashboard.html' %}
+{% block content %}
+<html lang="en">
+<head>
+	<title>Exam Registration</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+<!--===============================================================================================-->	
+	<link rel="icon" type="image/png" href="static/ExamRegistration/images/icons/favicon.ico"/>
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/vendor/bootstrap/css/bootstrap.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/vendor/animate/animate.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/vendor/css-hamburgers/hamburgers.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/vendor/animsition/css/animsition.min.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/vendor/select2/select2.min.css">
+<!--===============================================================================================-->	
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/vendor/daterangepicker/daterangepicker.css">
+<!--===============================================================================================-->
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/css/util.css">
+	<link rel="stylesheet" type="text/css" href="static/ExamRegistration/css/main.css">
+<!--===============================================================================================-->
+</head>
+<body>
+	
+	<div class="limiter">
+		<form class="login100-form validate-form flex-sb flex-w" method="POST" action="" enctype="multipart/form-data">
+		<div class="container-login100">
+			<div class="wrap-login100 p-l-85 p-r-85 p-t-55 p-b-55">
+
+					{{ form.hidden_tag() }}
+					<span class="login100-form-title p-b-32">
+						Exam Registration
+					</span>
+					<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Fullname
+					</span>
+					{% if form.fullname.errors %}
+                        {{ form.fullname(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.fullname.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.fullname(class="form-control form-control-lg", value=current_user.fullname, readonly="readonly") }}
+
+						<span class="focus-input100"></span>
+						{% endif %}
+
+					</div>
+					<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Email
+					</span>
+					{% if form.email.errors %}
+                        {{ form.email(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.email.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.email(class="form-control form-control-lg", value=current_user.email, readonly="readonly") }}
+
+						<span class="focus-input100"></span>
+						{% endif %}
+
+					</div>
+					<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Contact No
+					</span>
+					{% if form.contact_no.errors %}
+                        {{ form.contact_no(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.contact_no.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.contact_no(class="form-control form-control-lg", readonly="readonly", value=current_user.contact_no ) }}
+
+
+						{% endif %}
+
+					</div>
+					<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Gender
+					</span>
+					<div class="form-group">
+					{% if form.gender.errors %}
+                        {{ form.gender(class="form-control form-control-lg is-invalid") }}
+                            {% for error in form.gender.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+
+                    {% else %}
+
+							{{ form.gender(class="form-controls", readonly="readonly", value=current_user.gender) }}
+						{% endif %}
+
+					</div>
+
+
+					<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Date Of Birth
+					</span>
+					{% if form.dateofbirth.errors %}
+                        {{ form.dateofbirth(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.dateofbirth.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36"  >
+
+							{{ form.dateofbirth(class="form-control form-control-lg",  placeholder="dd-mm-yy") }}
+
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Address
+					</span>
+					{% if form.address.errors %}
+                        {{ form.address(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.address.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.address(class="form-control form-control-lg", placeholder="Enter your address") }}
+
+
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						City
+					</span>
+					{% if form.city.errors %}
+                        {{ form.city(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.city.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.city(class="form-control form-control-lg") }}
+
+
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Pin Code
+					</span>
+					{% if form.pincode.errors %}
+                        {{ form.pincode(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.pincode.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.pincode(class="form-control form-control-lg") }}
+
+
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						State
+					</span>
+					{% if form.state.errors %}
+                        {{ form.state(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.state.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.state(class="form-control form-control-lg") }}
+
+
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Country
+					</span>
+					{% if form.country.errors %}
+                        {{ form.country(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.country.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.country(class="form-control form-control-lg", readonly="readonly") }}
+
+
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+					<span class="txt1 p-b-11">
+						Qualifications
+					</span>
+					{% if form.qualifications.errors %}
+                        {{ form.qualifications(class="form-control form-control-lg is-invalid") }}
+                        <div class="invalid-feedback">
+                            {% for error in form.qualifications.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+                        </div>
+                    {% else %}
+					<div class="wrap-input100 validate-input m-b-36" data-validate = "Fullname is required" >
+
+							{{ form.qualifications(class="form-control form-control-lg") }}
+
+
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+
+				<span class="txt1 p-b-11">
+						Apply For
+					</span>
+					<div class="form-group">
+					{% if form.category.errors %}
+                        {{ form.category(class="form-control form-control-lg is-invalid") }}
+                            {% for error in form.category.errors %}
+                                <span>{{ error }}</span>
+                            {% endfor %}
+
+                    {% else %}
+
+							{{ form.category(class="form-controls") }}
+						{% endif %}
+
+					</div>
+				<!--===============================================================================================-->
+				<div class="form-group">
+                    {{ form.aadhaar.label() }}
+                    {{ form.aadhaar(class="form-control-file") }}
+                    {% if form.aadhaar.errors %}
+                        {% for error in form.aadhaar.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+
+
+					<!--===============================================================================================-->
+				 <div class="form-group">
+                    {{ form.documents.label() }}
+                    {{ form.documents(class="form-control-file") }}
+                    {% if form.documents.errors %}
+                        {% for error in form.documents.errors %}
+                            <span class="text-danger">{{ error }}</span></br>
+                        {% endfor %}
+                    {% endif %}
+                </div>
+
+
+
+					<!--===============================================================================================-->
+					<br>
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn">
+							Submit
+						</button>
+					</div>
+
+
+			</div>
+		</div>
+			</form>
+	</div>
+	
+
+	<div id="dropDownSelect1"></div>
+
+</body>
+</html>
+{% endblock %}
